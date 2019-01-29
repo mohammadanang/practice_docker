@@ -1,7 +1,8 @@
 FROM node:8
 RUN mkdir /practice_docker
-ADD . /practice_docker
 WORKDIR /practice_docker
+COPY package.json /practice_docker
 RUN npm i
-EXPOSE 8080
+COPY . /practice_docker
+EXPOSE 3000
 CMD ["npm", "start"]
