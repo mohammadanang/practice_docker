@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  practice_docker:
+    image: anangm182/practice_docker
+    ports:
+      - 8080:3000
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1: done; npm start'
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/practice_docker
+      - PORT=3000
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=practice_docker
