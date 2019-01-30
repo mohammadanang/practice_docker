@@ -1,8 +1,13 @@
-version: "2"
+version: "3"
 
 services:
-  practice_docker:
-    image: anangm182/practice_docker
+  app:
+    # image: anangm182/practice_docker
+    build: ./
+    command: npm run start
+    container_name: practice_docker
+    volumes:
+      - ./:/practice_docker
     ports:
       - ${PORT}:${PORT}
     depends_on:
