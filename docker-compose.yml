@@ -9,6 +9,7 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/practice_docker
+      - PORT=3000
   db:
     image: postgres
     environment:
