@@ -8,7 +8,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://postgres:password@db:5432/practice_docker
+      - DATABASE_URL=postgres://postgres:password@db/practice_docker
   db:
     image: postgres
     environment:
