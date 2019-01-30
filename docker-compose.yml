@@ -4,7 +4,7 @@ services:
   practice_docker:
     image: anangm182/practice_docker
     ports:
-      - 3000:3000
+      - ${PORT}:${PORT}
     depends_on:
       - db
     environment:
