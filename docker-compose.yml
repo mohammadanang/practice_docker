@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 
 services:
   practice_docker:
@@ -9,7 +9,6 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/practice_docker
-      - PORT=${PORT}
   db:
     image: postgres
     environment:
