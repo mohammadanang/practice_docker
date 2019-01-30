@@ -6,7 +6,7 @@ const pg = require('pg');
 var config = {
     user: 'postgres',
     database: 'practice_docker',
-    password: 'kiasu123',
+    password: 'password',
     port: 5432,
     max: 10,
     idleTimeoutMillis: 30000,
