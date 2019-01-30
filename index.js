@@ -6,7 +6,7 @@ const pg = require('pg');
 var config = {
     user: 'postgres',
     database: 'practice_docker',
-    password: 'password',
+    password: 'kiasu123',
     port: 5432,
     max: 10,
     idleTimeoutMillis: 30000,
@@ -21,8 +21,8 @@ server.get('/pool', (req, res) => {
     pool.connect((err, client, done) => {
         if (err) {
             res.status(400).send(err);
+        } else {
+            res.status(200).send('Connect to postgres');
         }
-
-        res.status(200).send('Connect to postgres');
     });
 });
