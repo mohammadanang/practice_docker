@@ -2,16 +2,13 @@ const express = require('express');
 const server = express();
 const PORT = process.env.PORT || 3000;
 const pg = require('pg');
+const dotenv = require('dotenv');
 
-var config = {
-    user: 'postgres',
-    database: 'practice_docker',
-    password: 'password',
-    port: 5432,
-    max: 10,
-    idleTimeoutMillis: 30000,
-};
-var pool = new pg.Pool(config);
+dotenv.config();
+
+var pool = new pg.Pool({
+    connectionString: process.env.DATABASE_URL
+});
 
 server.listen(PORT, () => console.log(`Server running on ${PORT}`));
 
